@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The Aquarium Guide</title>
+  <meta name="theme-color" content="#0b5f73" />
+  <meta name="description" content="The Aquarium Guide — a quick guided-tour PWA for the South Carolina Aquarium in Charleston." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-top">
+      <div class="hero-brand-card">
+        <img class="hero-wordmark" src="assets/logo-full.jpg" alt="The Aquarium Guide" />
+      </div>
+      <button id="installBtn" class="ghost" hidden>Install</button>
+    </div>
+
+    <div class="hero-copy">
+      <div>
+        <p class="eyebrow">South Carolina Aquarium • Charleston</p>
+        <p class="lede">A simple phone-friendly visit helper with a guided route, a quick map, and nearby places to grab a bite to eat.</p>
+      </div>
+      <img class="hero-mark" src="assets/logo-mark.jpg" alt="Aquarium Guide logo" />
+    </div>
+  </header>
+
+  <main>
+    <section class="card status">
+      <div>
+        <h2>Tomorrow’s Visit</h2>
+        <p><strong>Plan:</strong> allow 90–120 minutes. Official hours are usually 9:00 AM–5:00 PM, with last entry at 3:30 PM. Check live details before leaving.</p>
+      </div>
+      <a class="button" href="https://scaquarium.org/tickets/" target="_blank" rel="noopener">Tickets / Hours</a>
+    </section>
+
+    <nav class="tabs" aria-label="App sections">
+      <button class="tab active" data-tab="tour">Tour</button>
+      <button class="tab" data-tab="map">Map</button>
+      <button class="tab" data-tab="food">Food</button>
+      <button class="tab" data-tab="tips">Tips</button>
+    </nav>
+
+    <section id="tour" class="panel active">
+      <div class="section-head">
+        <h2>Guided Route</h2>
+        <button id="resetProgress" class="small">Reset</button>
+      </div>
+      <p class="hint">Tap a stop when you finish it. Use the “Must see” tags if you need a shorter visit.</p>
+      <div id="progressBar"><span></span></div>
+      <ol id="tourList" class="tour-list"></ol>
+    </section>
+
+    <section id="map" class="panel">
+      <h2>Navigation</h2>
+      <p class="hint">This is a simplified route cue sheet, not an official floor plan. Use the Aquarium’s map link on site for exact exhibit placement.</p>
+      <div class="mini-map" aria-label="Simplified route map">
+        <img class="map-watermark" src="assets/logo-mark.jpg" alt="" aria-hidden="true" />
+        <div class="node entrance">Entrance</div>
+        <div class="node mountain">Mountain Forest</div>
+        <div class="node piedmont">Piedmont</div>
+        <div class="node marsh">Saltmarsh / Coast</div>
+        <div class="node ocean">Great Ocean Tank</div>
+        <div class="node turtle">Sea Turtle Care Center</div>
+        <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div><div class="line l5"></div>
+      </div>
+      <div class="button-grid">
+        <a class="button" href="https://scaquarium.org/map/" target="_blank" rel="noopener">Official Aquarium Map</a>
+        <a class="button" href="https://maps.apple.com/?address=100%20Aquarium%20Wharf,%20Charleston,%20SC%2029401" target="_blank" rel="noopener">Open in Apple Maps</a>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&query=South%20Carolina%20Aquarium%20100%20Aquarium%20Wharf%20Charleston%20SC" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="button" href="https://scaquarium.org/directions-parking/" target="_blank" rel="noopener">Parking Info</a>
+      </div>
+    </section>
+
+    <section id="food" class="panel">
+      <h2>Nearby Bites</h2>
+      <p class="hint">Tap a card to open directions. Call or check hours before heading over.</p>
+      <div class="filters" aria-label="Food filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="quick">Quick</button>
+        <button class="chip" data-filter="seafood">Seafood</button>
+        <button class="chip" data-filter="dessert">Dessert</button>
+      </div>
+      <div id="foodList" class="food-list"></div>
+    </section>
+
+    <section id="tips" class="panel">
+      <h2>Quick Tips</h2>
+      <div class="tip-grid">
+        <article class="tip"><h3>Best short route</h3><p>Prioritize river otters, touch tanks, Great Ocean Tank, Jurassic Seas, and Sea Turtle Care Center.</p></article>
+        <article class="tip"><h3>Photo moments</h3><p>Harbor views, otters if active, jellyfish, large tank silhouettes, and turtles.</p></article>
+        <article class="tip"><h3>Parking</h3><p>The Aquarium points guests to the city-operated garage at 24 Calhoun Street.</p></article>
+        <article class="tip"><h3>Accessibility</h3><p>Keep the official map open and use elevators/ramps as needed. Ask staff for the easiest route.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made as a quick personal tour helper. Not affiliated with the South Carolina Aquarium.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
