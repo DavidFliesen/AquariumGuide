@@ -7,7 +7,7 @@ const ASSETS = [
   './manifest.webmanifest',
   './assets/logo-mark.jpg',
   './assets/logo-full.jpg',
-  './assets/sca-map-june-2026.webp',
+  './assets/sca-map-june-2026.jpg',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png'

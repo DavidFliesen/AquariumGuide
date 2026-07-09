@@ -5,7 +5,7 @@ A polished single-page web app for a South Carolina Aquarium visit in Charleston
 ## Current update
 - Removed the install button.
 - Reworked the design so it more closely follows the feel of the South Carolina Aquarium website: clean white navigation, strong ocean-blue hero section, coral/gold calls to action, larger typography and card-based content.
-- Kept the app as a normal webpage while retaining lightweight offline caching.
+- Kept the app as a normal jpgage while retaining lightweight offline caching.
 - Included the Aquarium's online map image for quick reference, with links back to the official map page.
 
 ## Run locally
