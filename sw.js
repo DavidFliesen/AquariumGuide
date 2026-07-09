@@ -1,25 +1,33 @@
-const CACHE = 'the-aquarium-guide-v11';
+const CACHE = 'the-aquarium-guide-v13';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
   './manifest.webmanifest',
-  './assets/logo-mark-transparent.png',
-  './assets/logo-full-transparent.png',
+  './assets/logo-mark.png',
+  './assets/logo-full.png',
   './assets/sca-map-june-2026.jpg',
   './assets/sca-map-june-2026-dark.jpg',
-  './assets/mountain-forest-transparent.png',
-  './assets/piedmont-transparent.png',
-  './assets/touch-tank-transparent.png',
-  './assets/saltmarsh-aviary-transparent.png',
-  './assets/great-ocean-tank-transparent.png',
-  './assets/jurassic-seas-transparent.png',
-  './assets/sea-turtle-care-center-transparent.png',
+  './assets/mountain-forest-panel.jpg',
+  './assets/mountain-forest-panel-light.jpg',
+  './assets/piedmont-panel.jpg',
+  './assets/piedmont-panel-light.jpg',
+  './assets/touch-tank-panel.jpg',
+  './assets/touch-tank-panel-light.jpg',
+  './assets/saltmarsh-aviary-panel.jpg',
+  './assets/saltmarsh-aviary-panel-light.jpg',
+  './assets/great-ocean-tank-panel.jpg',
+  './assets/great-ocean-tank-panel-light.jpg',
+  './assets/jurassic-seas-panel.jpg',
+  './assets/jurassic-seas-panel-light.jpg',
+  './assets/sea-turtle-care-center-panel.jpg',
+  './assets/sea-turtle-care-center-panel-light.jpg',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png'
 ];
+
 
 self.addEventListener('install', event => {
   self.skipWaiting();

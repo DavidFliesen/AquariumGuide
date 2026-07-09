@@ -943,3 +943,51 @@ html[data-theme="dark"] .stop.route-stop .stop-media{
 html[data-theme="dark"] .stop-media.logo-media img{
   background:transparent!important;
 }
+
+
+/* Final image cleanup: use true transparent logos and framed attraction art panels. */
+.brand img{
+  background:transparent!important;
+  border:0!important;
+}
+.stop.route-stop .stop-media{
+  background:transparent!important;
+  border:0!important;
+  overflow:visible;
+}
+.stop.route-stop .stop-media img{
+  width:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover!important;
+  border-radius:22px;
+  background:#061827!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:0 14px 34px rgba(0,45,69,.20)!important;
+}
+html[data-theme="dark"] .stop.route-stop .stop-media img{
+  background:#061827!important;
+  border-color:rgba(121,213,231,.18)!important;
+  box-shadow:0 16px 38px rgba(0,0,0,.44)!important;
+}
+.stop.route-stop .stop-media.logo-media{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.stop.route-stop .stop-media.logo-media img{
+  object-fit:contain!important;
+  aspect-ratio:16 / 9;
+  padding:12px;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+html[data-theme="dark"] .stop.route-stop .stop-media.logo-media img{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+@media(max-width:960px){
+  .stop.route-stop .stop-media img{max-height:220px;}
+  .stop.route-stop .stop-media.logo-media img{max-height:140px;}
+}

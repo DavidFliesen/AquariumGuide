@@ -31,3 +31,9 @@ This version opens in dark mode by default for aquarium-friendly viewing and inc
 - Logos now use one transparent version across both light and dark modes.
 - Attraction illustrations have transparent backgrounds so they blend into both themes.
 - Dark mode remains the default, with the top-right Light/Dark toggle preserved.
+
+
+## Image cleanup update
+- Replaced logo assets with true transparent PNG versions.
+- Replaced floating transparent attraction cutouts with framed illustration panels so they read cleanly in dark mode and light mode.
+- Cache updated to v13.
