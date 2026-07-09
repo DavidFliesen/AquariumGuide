@@ -742,3 +742,171 @@ main{margin-top:-28px}
     grid-column:2;
   }
 }
+
+/* Light / dark mode support. Dark is the default for aquarium-friendly viewing. */
+:root{
+  color-scheme:light dark;
+}
+html[data-theme="dark"]{
+  --navy:#020d1c;
+  --deep:#051d34;
+  --blue:#23b8e5;
+  --teal:#25d7cf;
+  --aqua:#73ecff;
+  --gold:#f0c65b;
+  --coral:#ff8a62;
+  --sand:#10293b;
+  --mist:#020d1c;
+  --ink:#eaf8ff;
+  --muted:#a8c1ce;
+  --line:rgba(121,213,231,.20);
+  --white:#061827;
+  --shadow:0 18px 44px rgba(0,0,0,.42);
+}
+html[data-theme="dark"] body{
+  background:
+    radial-gradient(circle at 18% 0%,rgba(0,168,181,.16),transparent 34%),
+    linear-gradient(180deg,#020d1c 0%,#051827 48%,#03111f 100%);
+  color:var(--ink);
+}
+html[data-theme="dark"] .site-nav{
+  background:rgba(2,13,28,.92);
+  border-bottom-color:rgba(121,213,231,.18);
+  backdrop-filter:blur(14px);
+}
+html[data-theme="dark"] .brand{color:#eaf8ff;}
+html[data-theme="dark"] .hero{
+  background:
+    radial-gradient(circle at 82% 10%,rgba(37,215,207,.16),transparent 25%),
+    linear-gradient(135deg,#020d1c 0%,#05344f 55%,#06243c 100%);
+}
+html[data-theme="dark"] .hero::after{background:#020d1c;}
+html[data-theme="dark"] .lede{color:#cceef8;}
+html[data-theme="dark"] .visit-card,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .tabs,
+html[data-theme="dark"] .stop,
+html[data-theme="dark"] .stop.route-stop,
+html[data-theme="dark"] .food-card,
+html[data-theme="dark"] .tip{
+  background:linear-gradient(180deg,rgba(9,32,50,.96),rgba(5,22,38,.96));
+  border-color:var(--line);
+  color:var(--ink);
+}
+html[data-theme="dark"] .visit-card{
+  border-top-color:var(--teal);
+}
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] .brand,
+html[data-theme="dark"] .stop h3,
+html[data-theme="dark"] .food-card h3,
+html[data-theme="dark"] .tip h3{
+  color:#eaf8ff;
+}
+html[data-theme="dark"] .hint,
+html[data-theme="dark"] .tip p,
+html[data-theme="dark"] .stop p,
+html[data-theme="dark"] .food-card p,
+html[data-theme="dark"] .visit-card p{
+  color:var(--muted);
+}
+html[data-theme="dark"] .tabs{
+  box-shadow:0 10px 32px rgba(0,0,0,.34);
+}
+html[data-theme="dark"] .tab{
+  color:#cfeaf3;
+}
+html[data-theme="dark"] .tab.active{
+  background:linear-gradient(135deg,#0781a8,#13bbb7);
+  color:#02111d;
+}
+html[data-theme="dark"] .button.secondary,
+html[data-theme="dark"] .small,
+html[data-theme="dark"] .chip{
+  background:#082236;
+  color:#dff8fb;
+  border-color:var(--line);
+}
+html[data-theme="dark"] .button.primary,
+html[data-theme="dark"] .chip.active{
+  background:linear-gradient(135deg,#0781a8,#13bbb7);
+  color:#02111d;
+}
+html[data-theme="dark"] .tag{
+  background:rgba(240,198,91,.14);
+  color:#ffe095;
+  border-color:rgba(240,198,91,.34);
+}
+html[data-theme="dark"] .stop::before{
+  background:linear-gradient(135deg,#0781a8,#13bbb7);
+  color:#02111d;
+}
+html[data-theme="dark"] .stop-media img{
+  background:#051827;
+  border-color:rgba(121,213,231,.16);
+  box-shadow:0 12px 28px rgba(0,0,0,.36);
+}
+html[data-theme="dark"] .stop-media.logo-media img{
+  background:#020d1c;
+}
+html[data-theme="dark"] .map-frame{
+  background:#03111f;
+  border-color:var(--line);
+  box-shadow:inset 0 0 0 8px rgba(255,255,255,.02);
+}
+html[data-theme="dark"] footer{
+  background:#020913;
+}
+
+.nav-inner{
+  justify-content:space-between!important;
+}
+.theme-toggle{
+  margin-left:auto;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 13px;
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:var(--deep);
+  background:#fff;
+  font-weight:950;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(0,61,88,.08);
+}
+.theme-icon{
+  display:grid;
+  place-items:center;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:var(--deep);
+  color:white;
+  line-height:1;
+}
+html[data-theme="dark"] .theme-toggle{
+  background:rgba(8,34,54,.96);
+  color:#eaf8ff;
+  border-color:rgba(121,213,231,.28);
+  box-shadow:0 8px 24px rgba(0,0,0,.32);
+}
+html[data-theme="dark"] .theme-icon{
+  background:linear-gradient(135deg,#0781a8,#13bbb7);
+  color:#02111d;
+}
+@media(max-width:760px){
+  .nav-inner{
+    display:flex!important;
+    align-items:center;
+    gap:12px;
+  }
+  .brand span{font-size:1rem;}
+  .brand img{width:42px;height:42px;}
+  .theme-toggle{padding:8px 10px;min-height:38px;}
+  .theme-text{display:none;}
+  .tabs{top:76px;}
+}

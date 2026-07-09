@@ -3,8 +3,8 @@
   "short_name": "Aquarium Guide",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#eef7f8",
-  "theme_color": "#003d58",
+  "background_color": "#020d1c",
+  "theme_color": "#020d1c",
   "description": "The Aquarium Guide — a guided visit helper for the South Carolina Aquarium in Charleston.",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },

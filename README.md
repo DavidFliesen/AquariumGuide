@@ -21,3 +21,7 @@ This version adds soft pastel attraction illustrations for the main tour stops s
 - Attraction highlights gallery added above the checklist, using the illustrated exhibit images.
 
 - Simplified the Tour section into a single Recommended Tour Route list: one attraction per row with image, title, description and time. Removed duplicate highlight gallery and checklist-style editing/progress controls.
+
+
+## Dark mode
+This version opens in dark mode by default for aquarium-friendly viewing and includes a top-right Light/Dark toggle. Uploaded dark logos are used in dark mode, and darkened variants of the tour artwork and map are cached for offline use.

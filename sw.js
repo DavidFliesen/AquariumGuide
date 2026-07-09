@@ -1,5 +1,4 @@
-
-const CACHE = 'the-aquarium-guide-v9';
+const CACHE = 'the-aquarium-guide-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -8,17 +7,30 @@ const ASSETS = [
   './manifest.webmanifest',
   './assets/logo-mark.jpg',
   './assets/logo-full.jpg',
+  './assets/logo-mark-dark.jpg',
+  './assets/logo-full-dark.jpg',
   './assets/sca-map-june-2026.jpg',
+  './assets/sca-map-june-2026-dark.jpg',
   './assets/mountain-forest.png',
+  './assets/mountain-forest-dark.jpg',
   './assets/piedmont.png',
+  './assets/piedmont-dark.jpg',
   './assets/touch-tank.png',
+  './assets/touch-tank-dark.jpg',
   './assets/saltmarsh-aviary.png',
+  './assets/saltmarsh-aviary-dark.jpg',
   './assets/great-ocean-tank.png',
+  './assets/great-ocean-tank-dark.jpg',
   './assets/jurassic-seas.png',
+  './assets/jurassic-seas-dark.jpg',
   './assets/sea-turtle-care-center.png',
+  './assets/sea-turtle-care-center-dark.jpg',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './icons/apple-touch-icon.png'
+  './icons/apple-touch-icon.png',
+  './icons/icon-192-light.png',
+  './icons/icon-512-light.png',
+  './icons/apple-touch-icon-light.png'
 ];
 
 self.addEventListener('install', event => {
