@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>The Aquarium Guide</title>
-  <meta name="theme-color" content="#020d1c" />
+  <meta name="theme-color" content="#eef7f8" />
   <meta name="description" content="The Aquarium Guide — a polished webpage for a South Carolina Aquarium visit in Charleston." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon-192.png" sizes="192x192" />
@@ -12,8 +12,8 @@
   <script>
     (() => {
       const saved = localStorage.getItem('aquariumGuideTheme');
-      document.documentElement.dataset.theme = saved || 'dark';
-      document.documentElement.style.colorScheme = saved === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = saved || 'light';
+      document.documentElement.style.colorScheme = (saved || 'light') === 'dark' ? 'dark' : 'light';
     })();
   </script>
   <link rel="stylesheet" href="styles.css" />

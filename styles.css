@@ -991,3 +991,29 @@ html[data-theme="dark"] .stop.route-stop .stop-media.logo-media img{
   .stop.route-stop .stop-media img{max-height:220px;}
   .stop.route-stop .stop-media.logo-media img{max-height:140px;}
 }
+
+
+/* User tweak: in dark mode, attraction frames should keep the same white panel background as light mode. */
+html[data-theme="dark"] .stop.route-stop .stop-media img{
+  background:#ffffff!important;
+  border-color:rgba(0,61,88,.10)!important;
+  box-shadow:0 16px 38px rgba(0,0,0,.34)!important;
+}
+html[data-theme="dark"] .stop.route-stop .stop-media.logo-media img{
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+
+
+/* v15 tweak: make light mode the default and keep white attraction panel backgrounds even in dark mode. */
+html[data-theme="dark"] .stop.route-stop .stop-media img{
+  background:#ffffff !important;
+  border:1px solid rgba(0,61,88,.10) !important;
+  box-shadow:0 16px 38px rgba(0,0,0,.34) !important;
+}
+html[data-theme="dark"] .stop.route-stop .stop-media.logo-media img{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}

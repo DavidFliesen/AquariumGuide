@@ -37,3 +37,7 @@ This version opens in dark mode by default for aquarium-friendly viewing and inc
 - Replaced logo assets with true transparent PNG versions.
 - Replaced floating transparent attraction cutouts with framed illustration panels so they read cleanly in dark mode and light mode.
 - Cache updated to v13.
+
+- v14: dark mode now uses the same white framed attraction panels as light mode.
+
+- v15: light mode is now the default, the app still remembers the last-used theme, and dark mode uses white attraction panel backgrounds.

@@ -16,7 +16,7 @@ const stops = [
     tags:['Must see'],
     note:'Begin with the inland side of South Carolina: waterfalls, stream life, a bald eagle and river otters if they are active.',
     image:'assets/mountain-forest-panel-light.jpg',
-    darkImage:'assets/mountain-forest-panel.jpg',
+    darkImage:'assets/mountain-forest-panel-light.jpg',
     alt:'Soft pastel illustration of Mountain Forest with a bald eagle, waterfall, and river otters'
   },
   {
@@ -26,7 +26,7 @@ const stops = [
     tags:['SC habitats'],
     note:'Continue through freshwater habitats with tree frogs, native fish and the feeling of moving from foothills toward the coast.',
     image:'assets/piedmont-panel-light.jpg',
-    darkImage:'assets/piedmont-panel.jpg',
+    darkImage:'assets/piedmont-panel-light.jpg',
     alt:'Soft pastel illustration of the Piedmont exhibit with tree frogs and freshwater fish'
   },
   {
@@ -36,7 +36,7 @@ const stops = [
     tags:['Must see','Kids'],
     note:'Pause for a hands-on moment with sea stars, rays and touch-tank wildlife. Move slowly and follow staff guidance.',
     image:'assets/touch-tank-panel-light.jpg',
-    darkImage:'assets/touch-tank-panel.jpg',
+    darkImage:'assets/touch-tank-panel-light.jpg',
     alt:'Soft pastel illustration of a touch tank with rays, sea stars, and gentle hands reaching in'
   },
   {
@@ -46,7 +46,7 @@ const stops = [
     tags:['Photos'],
     note:'Step into the coastal Lowcountry with marsh birds, harbor views, terrapins and saltmarsh life.',
     image:'assets/saltmarsh-aviary-panel-light.jpg',
-    darkImage:'assets/saltmarsh-aviary-panel.jpg',
+    darkImage:'assets/saltmarsh-aviary-panel-light.jpg',
     alt:'Soft pastel illustration of the Saltmarsh Aviary with a roseate spoonbill and coastal marsh water'
   },
   {
@@ -56,7 +56,7 @@ const stops = [
     tags:['Must see'],
     note:'Slow down at the big ocean moment. Look for sharks, rays, schooling fish and the Aquarium’s famous sea turtle at different tank levels.',
     image:'assets/great-ocean-tank-panel-light.jpg',
-    darkImage:'assets/great-ocean-tank-panel.jpg',
+    darkImage:'assets/great-ocean-tank-panel-light.jpg',
     alt:'Soft pastel underwater illustration of the Great Ocean Tank with sharks, rays, fish, and a sea turtle'
   },
   {
@@ -66,7 +66,7 @@ const stops = [
     tags:['Featured exhibit'],
     note:'Add the prehistoric ocean stop for fossils, marine reptile skeletons and one of the strongest wow moments in the visit.',
     image:'assets/jurassic-seas-panel-light.jpg',
-    darkImage:'assets/jurassic-seas-panel.jpg',
+    darkImage:'assets/jurassic-seas-panel-light.jpg',
     alt:'Soft pastel illustration of Jurassic Seas with a marine reptile skeleton and fossils'
   },
   {
@@ -76,7 +76,7 @@ const stops = [
     tags:['Must see','Conservation'],
     note:'End with the rescue and rehabilitation story. Look for patient updates and conservation takeaways from the sea turtle hospital.',
     image:'assets/sea-turtle-care-center-panel-light.jpg',
-    darkImage:'assets/sea-turtle-care-center-panel.jpg',
+    darkImage:'assets/sea-turtle-care-center-panel-light.jpg',
     alt:'Soft pastel illustration of the Sea Turtle Care Center with a rescued sea turtle in rehabilitation'
   },
   {
@@ -111,7 +111,7 @@ function pickAsset(lightSrc, darkSrc){
 function updateThemeControls(){
   const dark = currentTheme() === 'dark';
   document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-  if(themeMeta) themeMeta.setAttribute('content', dark ? '#020d1c' : '#003d58');
+  if(themeMeta) themeMeta.setAttribute('content', dark ? '#020d1c' : '#eef7f8');
   if(themeToggle){
     themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     themeToggle.setAttribute('aria-pressed', String(dark));
