@@ -13,3 +13,9 @@ A simplified visitor-guide webpage for a South Carolina Aquarium visit in Charle
 Upload/replace all files in the repository root, including `index.html`, `styles.css`, `app.js`, `sw.js`, and the `assets` folder.
 
 This is a personal visit helper and is not affiliated with the South Carolina Aquarium.
+
+
+## Visual updates
+This version adds soft pastel attraction illustrations for the main tour stops so the page feels richer and more inviting.
+
+- Attraction highlights gallery added above the checklist, using the illustrated exhibit images.

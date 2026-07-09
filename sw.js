@@ -1,4 +1,5 @@
-const CACHE = 'the-aquarium-guide-v6';
+
+const CACHE = 'the-aquarium-guide-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +9,13 @@ const ASSETS = [
   './assets/logo-mark.jpg',
   './assets/logo-full.jpg',
   './assets/sca-map-june-2026.jpg',
+  './assets/mountain-forest.png',
+  './assets/piedmont.png',
+  './assets/touch-tank.png',
+  './assets/saltmarsh-aviary.png',
+  './assets/great-ocean-tank.png',
+  './assets/jurassic-seas.png',
+  './assets/sea-turtle-care-center.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png'

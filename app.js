@@ -1,13 +1,86 @@
+
 const stops = [
-  {id:'entry', title:'Start: Harbor Lobby / Orientation', time:'5 min', tags:['Start'], note:'Get your bearings, check the official map, and decide whether you want the full route or highlights only.'},
-  {id:'mountain', title:'Mountain Forest', time:'12 min', tags:['Must see'], note:'Begin with the inland side of South Carolina: waterfalls, stream life, birds and river otters if they are active.'},
-  {id:'piedmont', title:'Piedmont & Freshwater Habitats', time:'10 min', tags:['SC habitats'], note:'Use this as the “mountains to sea” transition, with rivers, wetlands, reptiles, amphibians and native fish.'},
-  {id:'touch', title:'Touch Tank / Hands-on Moment', time:'10–15 min', tags:['Must see','Kids'], note:'A good pause point. Move slowly, follow staff guidance and wash hands afterward.'},
-  {id:'aviary', title:'Saltmarsh Aviary / Coast', time:'12 min', tags:['Photos'], note:'Watch for birds, marsh life and the shift from inland habitat toward the coastal Lowcountry.'},
-  {id:'ocean', title:'Great Ocean Tank', time:'15–20 min', tags:['Must see'], note:'Slow down here. Look for sharks, rays, schooling fish and sea turtles at different tank levels.'},
-  {id:'jurassic', title:'Jurassic Seas', time:'10–15 min', tags:['Featured exhibit'], note:'A prehistoric ocean-themed stop and one of the best “wow” moments for the visit.'},
-  {id:'turtles', title:'Sea Turtle Care Center™', time:'15 min', tags:['Must see','Conservation'], note:'End with the rescue and rehabilitation story. Look for patient updates and conservation takeaways.'},
-  {id:'gift', title:'Gift Shop / Harbor View', time:'5–10 min', tags:['Finish'], note:'Grab a souvenir, then take a last look toward the harbor and Ravenel Bridge area.'}
+  {
+    id:'entry',
+    title:'Start: Harbor Lobby / Orientation',
+    time:'5 min',
+    tags:['Start'],
+    note:'Get your bearings, check the official map, and decide whether you want the full route or highlights only.',
+    image:'assets/logo-full.jpg',
+    alt:'The Aquarium Guide logo artwork'
+  },
+  {
+    id:'mountain',
+    title:'Mountain Forest',
+    time:'12 min',
+    tags:['Must see'],
+    note:'Begin with the inland side of South Carolina: waterfalls, stream life, birds and river otters if they are active.',
+    image:'assets/mountain-forest.png',
+    alt:'Soft pastel illustration of Mountain Forest with a bald eagle, waterfall, and river otters'
+  },
+  {
+    id:'piedmont',
+    title:'Piedmont',
+    time:'10 min',
+    tags:['SC habitats'],
+    note:'Use this as the “mountains to sea” transition, with rivers, wetlands, amphibians and native fish.',
+    image:'assets/piedmont.png',
+    alt:'Soft pastel illustration of the Piedmont exhibit with tree frogs and freshwater fish'
+  },
+  {
+    id:'touch',
+    title:'Boneyard Beach Touch Tank Experience',
+    time:'10–15 min',
+    tags:['Must see','Kids'],
+    note:'A good pause point with sea stars, rays and touch-tank wildlife. Move slowly, follow staff guidance and wash hands afterward.',
+    image:'assets/touch-tank.png',
+    alt:'Soft pastel illustration of a touch tank with rays, sea stars, and gentle hands reaching in'
+  },
+  {
+    id:'aviary',
+    title:'Saltmarsh Aviary',
+    time:'12 min',
+    tags:['Photos'],
+    note:'Watch for birds, marsh life and panoramic harbor atmosphere as you move into the coastal Lowcountry.',
+    image:'assets/saltmarsh-aviary.png',
+    alt:'Soft pastel illustration of the Saltmarsh Aviary with a roseate spoonbill and coastal marsh water'
+  },
+  {
+    id:'ocean',
+    title:'Ocean / Great Ocean Tank',
+    time:'15–20 min',
+    tags:['Must see'],
+    note:'Slow down here. Look for sharks, rays, schooling fish and the Aquarium’s famous sea turtle at different tank levels.',
+    image:'assets/great-ocean-tank.png',
+    alt:'Soft pastel underwater illustration of the Great Ocean Tank with sharks, rays, fish, and a sea turtle'
+  },
+  {
+    id:'jurassic',
+    title:'Jurassic Seas',
+    time:'10–15 min',
+    tags:['Featured exhibit'],
+    note:'A prehistoric ocean-themed stop and one of the best “wow” moments for the visit.',
+    image:'assets/jurassic-seas.png',
+    alt:'Soft pastel illustration of Jurassic Seas with a marine reptile skeleton and fossils'
+  },
+  {
+    id:'turtles',
+    title:'Zucker Family Sea Turtle Recovery™',
+    time:'15 min',
+    tags:['Must see','Conservation'],
+    note:'End with the rescue and rehabilitation story. Look for patient updates and conservation takeaways from the sea turtle hospital.',
+    image:'assets/sea-turtle-care-center.png',
+    alt:'Soft pastel illustration of the Sea Turtle Care Center with a rescued sea turtle in rehabilitation'
+  },
+  {
+    id:'gift',
+    title:'Gift Shop / Harbor View',
+    time:'5–10 min',
+    tags:['Finish'],
+    note:'Grab a souvenir, then take a last look toward the harbor and Ravenel Bridge area.',
+    image:'assets/logo-mark.jpg',
+    alt:'Aquarium Guide round logo mark'
+  }
 ];
 
 const food = [
@@ -20,14 +93,34 @@ const food = [
 
 const completed = new Set(JSON.parse(localStorage.getItem('completedStops') || '[]'));
 const list = document.getElementById('tourList');
+const highlightGrid = document.getElementById('highlightGrid');
+const featuredHighlights = stops.filter(s => !['entry','gift'].includes(s.id));
+
+function renderHighlights(){
+  if(!highlightGrid) return;
+  highlightGrid.innerHTML = featuredHighlights.map(s => `
+    <button class="highlight-card" data-jump="${s.id}" type="button" aria-label="Jump to ${s.title}">
+      <img src="${s.image}" alt="${s.alt}" loading="lazy">
+      <div class="highlight-copy">
+        <span class="highlight-time">${s.time}</span>
+        <strong>${s.title}</strong>
+      </div>
+    </button>`).join('');
+}
+
 
 function renderStops(){
-  list.innerHTML = stops.map((s,i)=>`
+  list.innerHTML = stops.map(s=>`
     <li class="stop ${completed.has(s.id)?'done':''}" data-id="${s.id}" tabindex="0" role="button" aria-pressed="${completed.has(s.id)}">
       <input type="checkbox" data-id="${s.id}" ${completed.has(s.id)?'checked':''} aria-label="Mark ${s.title} complete">
-      <div>
-        <h3>${s.title}</h3>
-        <p class="meta">${s.time}</p>
+      <div class="stop-media ${s.id==='entry' || s.id==='gift' ? 'logo-media' : ''}">
+        <img src="${s.image}" alt="${s.alt}" loading="lazy">
+      </div>
+      <div class="stop-copy">
+        <div class="stop-topline">
+          <h3>${s.title}</h3>
+          <span class="meta">${s.time}</span>
+        </div>
         <p>${s.note}</p>
         <div>${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
       </div>
@@ -99,8 +192,22 @@ document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=
   renderFood(btn.dataset.filter);
 }));
 
+document.addEventListener('click', e=>{
+  const card = e.target.closest('.highlight-card');
+  if(!card) return;
+  const id = card.dataset.jump;
+  activateTab('tour', false);
+  const target = document.querySelector(`.stop[data-id="${id}"]`);
+  if(target){
+    target.scrollIntoView({behavior:'smooth', block:'center'});
+    target.classList.add('pulse');
+    setTimeout(()=>target.classList.remove('pulse'), 1200);
+  }
+});
+
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
 }
+renderHighlights();
 renderStops();
 renderFood();
