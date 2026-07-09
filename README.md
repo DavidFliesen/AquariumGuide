@@ -25,3 +25,9 @@ This version adds soft pastel attraction illustrations for the main tour stops s
 
 ## Dark mode
 This version opens in dark mode by default for aquarium-friendly viewing and includes a top-right Light/Dark toggle. Uploaded dark logos are used in dark mode, and darkened variants of the tour artwork and map are cached for offline use.
+
+
+## Transparent artwork update
+- Logos now use one transparent version across both light and dark modes.
+- Attraction illustrations have transparent backgrounds so they blend into both themes.
+- Dark mode remains the default, with the top-right Light/Dark toggle preserved.

@@ -6,8 +6,7 @@ const stops = [
     time:'5 min',
     tags:['Start'],
     note:'Get your bearings, check the official map, and decide whether you want the full route or highlights only.',
-    image:'assets/logo-full.jpg',
-    darkImage:'assets/logo-full-dark.jpg',
+    image:'assets/logo-full-transparent.png',
     alt:'The Aquarium Guide logo artwork'
   },
   {
@@ -16,8 +15,7 @@ const stops = [
     time:'12 min',
     tags:['Must see'],
     note:'Begin with the inland side of South Carolina: waterfalls, stream life, a bald eagle and river otters if they are active.',
-    image:'assets/mountain-forest.png',
-    darkImage:'assets/mountain-forest-dark.jpg',
+    image:'assets/mountain-forest-transparent.png',
     alt:'Soft pastel illustration of Mountain Forest with a bald eagle, waterfall, and river otters'
   },
   {
@@ -26,8 +24,7 @@ const stops = [
     time:'10 min',
     tags:['SC habitats'],
     note:'Continue through freshwater habitats with tree frogs, native fish and the feeling of moving from foothills toward the coast.',
-    image:'assets/piedmont.png',
-    darkImage:'assets/piedmont-dark.jpg',
+    image:'assets/piedmont-transparent.png',
     alt:'Soft pastel illustration of the Piedmont exhibit with tree frogs and freshwater fish'
   },
   {
@@ -36,8 +33,7 @@ const stops = [
     time:'10–15 min',
     tags:['Must see','Kids'],
     note:'Pause for a hands-on moment with sea stars, rays and touch-tank wildlife. Move slowly and follow staff guidance.',
-    image:'assets/touch-tank.png',
-    darkImage:'assets/touch-tank-dark.jpg',
+    image:'assets/touch-tank-transparent.png',
     alt:'Soft pastel illustration of a touch tank with rays, sea stars, and gentle hands reaching in'
   },
   {
@@ -46,8 +42,7 @@ const stops = [
     time:'12 min',
     tags:['Photos'],
     note:'Step into the coastal Lowcountry with marsh birds, harbor views, terrapins and saltmarsh life.',
-    image:'assets/saltmarsh-aviary.png',
-    darkImage:'assets/saltmarsh-aviary-dark.jpg',
+    image:'assets/saltmarsh-aviary-transparent.png',
     alt:'Soft pastel illustration of the Saltmarsh Aviary with a roseate spoonbill and coastal marsh water'
   },
   {
@@ -56,8 +51,7 @@ const stops = [
     time:'15–20 min',
     tags:['Must see'],
     note:'Slow down at the big ocean moment. Look for sharks, rays, schooling fish and the Aquarium’s famous sea turtle at different tank levels.',
-    image:'assets/great-ocean-tank.png',
-    darkImage:'assets/great-ocean-tank-dark.jpg',
+    image:'assets/great-ocean-tank-transparent.png',
     alt:'Soft pastel underwater illustration of the Great Ocean Tank with sharks, rays, fish, and a sea turtle'
   },
   {
@@ -66,8 +60,7 @@ const stops = [
     time:'10–15 min',
     tags:['Featured exhibit'],
     note:'Add the prehistoric ocean stop for fossils, marine reptile skeletons and one of the strongest wow moments in the visit.',
-    image:'assets/jurassic-seas.png',
-    darkImage:'assets/jurassic-seas-dark.jpg',
+    image:'assets/jurassic-seas-transparent.png',
     alt:'Soft pastel illustration of Jurassic Seas with a marine reptile skeleton and fossils'
   },
   {
@@ -76,8 +69,7 @@ const stops = [
     time:'15 min',
     tags:['Must see','Conservation'],
     note:'End with the rescue and rehabilitation story. Look for patient updates and conservation takeaways from the sea turtle hospital.',
-    image:'assets/sea-turtle-care-center.png',
-    darkImage:'assets/sea-turtle-care-center-dark.jpg',
+    image:'assets/sea-turtle-care-center-transparent.png',
     alt:'Soft pastel illustration of the Sea Turtle Care Center with a rescued sea turtle in rehabilitation'
   },
   {
@@ -86,8 +78,7 @@ const stops = [
     time:'5–10 min',
     tags:['Finish'],
     note:'Wrap up with a souvenir or a final harbor view before heading out for food nearby.',
-    image:'assets/logo-mark.jpg',
-    darkImage:'assets/logo-mark-dark.jpg',
+    image:'assets/logo-mark-transparent.png',
     alt:'Aquarium Guide round logo mark'
   }
 ];
@@ -133,7 +124,7 @@ function renderStops(){
   list.innerHTML = stops.map(s=>`
     <li class="stop route-stop" data-id="${s.id}">
       <div class="stop-media ${s.id==='entry' || s.id==='gift' ? 'logo-media' : ''}">
-        <img class="theme-image" src="${pickAsset(s.image, s.darkImage)}" data-light="${s.image}" data-dark="${s.darkImage || s.image}" alt="${s.alt}" loading="lazy">
+        <img src="${s.image}" alt="${s.alt}" loading="lazy">
       </div>
       <div class="stop-copy">
         <div class="stop-topline">
@@ -186,7 +177,6 @@ if(themeToggle){
     document.documentElement.dataset.theme = next;
     localStorage.setItem('aquariumGuideTheme', next);
     updateThemeControls();
-    renderStops();
   });
 }
 

@@ -910,3 +910,36 @@ html[data-theme="dark"] .theme-icon{
   .theme-text{display:none;}
   .tabs{top:76px;}
 }
+
+
+/* Transparent artwork update: same logos and attraction art work in both themes. */
+.brand img{
+  object-fit:contain;
+  background:transparent!important;
+}
+.stop-media img{
+  object-fit:contain;
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+.stop.route-stop .stop-media{
+  background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(246,251,252,.68));
+  border:1px solid rgba(0,61,88,.08);
+  border-radius:22px;
+  overflow:hidden;
+}
+html[data-theme="dark"] .stop.route-stop .stop-media{
+  background:radial-gradient(circle at 50% 38%,rgba(88,215,230,.10),rgba(8,34,54,.22) 52%,rgba(5,18,32,.10));
+  border-color:rgba(121,213,231,.14);
+}
+.stop.route-stop .stop-media.logo-media{
+  background:transparent!important;
+  border-color:transparent!important;
+}
+.stop-media.logo-media img{
+  padding:10px;
+}
+html[data-theme="dark"] .stop-media.logo-media img{
+  background:transparent!important;
+}

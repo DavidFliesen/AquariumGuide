@@ -1,36 +1,24 @@
-const CACHE = 'the-aquarium-guide-v10';
+const CACHE = 'the-aquarium-guide-v11';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
   './manifest.webmanifest',
-  './assets/logo-mark.jpg',
-  './assets/logo-full.jpg',
-  './assets/logo-mark-dark.jpg',
-  './assets/logo-full-dark.jpg',
+  './assets/logo-mark-transparent.png',
+  './assets/logo-full-transparent.png',
   './assets/sca-map-june-2026.jpg',
   './assets/sca-map-june-2026-dark.jpg',
-  './assets/mountain-forest.png',
-  './assets/mountain-forest-dark.jpg',
-  './assets/piedmont.png',
-  './assets/piedmont-dark.jpg',
-  './assets/touch-tank.png',
-  './assets/touch-tank-dark.jpg',
-  './assets/saltmarsh-aviary.png',
-  './assets/saltmarsh-aviary-dark.jpg',
-  './assets/great-ocean-tank.png',
-  './assets/great-ocean-tank-dark.jpg',
-  './assets/jurassic-seas.png',
-  './assets/jurassic-seas-dark.jpg',
-  './assets/sea-turtle-care-center.png',
-  './assets/sea-turtle-care-center-dark.jpg',
+  './assets/mountain-forest-transparent.png',
+  './assets/piedmont-transparent.png',
+  './assets/touch-tank-transparent.png',
+  './assets/saltmarsh-aviary-transparent.png',
+  './assets/great-ocean-tank-transparent.png',
+  './assets/jurassic-seas-transparent.png',
+  './assets/sea-turtle-care-center-transparent.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './icons/apple-touch-icon.png',
-  './icons/icon-192-light.png',
-  './icons/icon-512-light.png',
-  './icons/apple-touch-icon-light.png'
+  './icons/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', event => {
