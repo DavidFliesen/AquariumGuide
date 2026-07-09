@@ -47,8 +47,5 @@ document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
   btn.classList.add('active'); renderFood(btn.dataset.filter);
 }));
-let deferredPrompt; const installBtn = document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; installBtn.hidden=false; });
-installBtn.addEventListener('click', async()=>{ if(!deferredPrompt) return; deferredPrompt.prompt(); deferredPrompt=null; installBtn.hidden=true; });
 if('serviceWorker' in navigator){ window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js')); }
 renderStops(); renderFood();

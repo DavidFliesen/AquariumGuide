@@ -4,10 +4,20 @@
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4fbfa",
-  "theme_color": "#0b5f73",
-  "description": "The Aquarium Guide — a guided-tour helper for the South Carolina Aquarium in Charleston.",
+  "theme_color": "#073b5c",
+  "description": "The Aquarium Guide \u2014 a guided-tour webpage for the South Carolina Aquarium in Charleston.",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }

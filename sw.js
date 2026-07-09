@@ -1,4 +1,4 @@
-const CACHE = 'the-aquarium-guide-v2';
+const CACHE = 'the-aquarium-guide-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const ASSETS = [
   './manifest.webmanifest',
   './assets/logo-full.jpg',
   './assets/logo-mark.jpg',
+  './assets/sca-map-june-2026.webp',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png'
