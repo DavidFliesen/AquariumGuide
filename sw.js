@@ -1,5 +1,5 @@
 
-const CACHE = 'the-aquarium-guide-v8';
+const CACHE = 'the-aquarium-guide-v9';
 const ASSETS = [
   './',
   './index.html',

@@ -26,13 +26,13 @@
       <div class="hero-copy">
         <p class="kicker">Self-guided visit companion</p>
         <h1>Explore from the mountains to the sea.</h1>
-        <p class="lede">A clean, phone-friendly page for your South Carolina Aquarium visit with a guided route, the Aquarium’s online map, parking links and nearby places to eat.</p>
+        <p class="lede">A clean, phone-friendly page for your South Carolina Aquarium visit with a suggested tour route, the Aquarium’s online map and nearby places to eat.</p>
       </div>
       <aside class="visit-card" aria-label="Visit plan summary">
         <span class="label">Recommended Plan</span>
         <h2>90–120 minutes</h2>
         <p>Follow the full route for a relaxed visit or focus on the “Must see” stops for a shorter day.</p>
-        <p class="plain-note">Use the simple section bar below for the tour, map, food and quick tips.</p>
+        
       </aside>
     </div>
   </section>
@@ -46,20 +46,13 @@
     </nav>
 
     <section id="tour" class="panel active">
-      <div class="section-head">
+      <div class="section-head simple-head">
         <div>
           <span class="label">Plan Your Visit</span>
           <h2>Recommended Tour Route</h2>
         </div>
-        <button id="resetProgress" class="small">Reset Progress</button>
       </div>
-      <p class="hint">Tap each stop as you complete it. Each attraction now includes a soft pastel illustration inspired by the Aquarium’s exhibit imagery.</p>
-      <div class="attraction-intro">
-        <h3 class="subhead">Attraction Highlights</h3>
-        <p class="hint compact">A quick visual guide to the main exhibits so you can spot what you most want to see.</p>
-        <div id="highlightGrid" class="highlight-grid"></div>
-      </div>
-      <div id="progressBar" aria-label="Tour progress"><span></span></div>
+      <p class="hint">A suggested path through the Aquarium, shown one stop per row with image, title, description and approximate time.</p>
       <ol id="tourList" class="tour-list"></ol>
     </section>
 

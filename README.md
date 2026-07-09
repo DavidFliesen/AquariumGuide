@@ -19,3 +19,5 @@ This is a personal visit helper and is not affiliated with the South Carolina Aq
 This version adds soft pastel attraction illustrations for the main tour stops so the page feels richer and more inviting.
 
 - Attraction highlights gallery added above the checklist, using the illustrated exhibit images.
+
+- Simplified the Tour section into a single Recommended Tour Route list: one attraction per row with image, title, description and time. Removed duplicate highlight gallery and checklist-style editing/progress controls.

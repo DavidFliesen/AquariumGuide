@@ -690,3 +690,55 @@ main{margin-top:-28px}
   .highlight-grid{grid-template-columns:1fr}
   .attraction-intro{padding:16px}
 }
+
+
+/* Simplified recommended tour route: one clean item per row, no editing/checklist behavior */
+.attraction-intro,
+#progressBar,
+.highlight-grid,
+.highlight-card,
+.subhead{display:none!important;}
+.simple-head{margin-bottom:4px;}
+.tour-list{
+  gap:16px;
+}
+.stop.route-stop{
+  cursor:default;
+  grid-template-columns:56px minmax(260px,330px) 1fr;
+  align-items:center;
+  padding:20px;
+  background:linear-gradient(180deg,#ffffff,#fbfeff);
+}
+.stop.route-stop:hover{
+  box-shadow:0 16px 34px rgba(0,61,88,.10);
+}
+.stop.route-stop::before{
+  align-self:center;
+  margin-top:0;
+}
+.stop.route-stop.done{
+  opacity:1;
+  background:linear-gradient(180deg,#ffffff,#fbfeff);
+}
+.stop.route-stop .stop-media img{
+  border-radius:20px;
+  box-shadow:0 12px 28px rgba(0,61,88,.10);
+}
+.stop.route-stop .stop-copy p{
+  font-size:1.02rem;
+}
+.stop.route-stop .stop-topline .meta{
+  color:var(--blue);
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+@media(max-width:960px){
+  .stop.route-stop{
+    grid-template-columns:48px 1fr;
+  }
+  .stop.route-stop .stop-media,
+  .stop.route-stop .stop-copy{
+    grid-column:2;
+  }
+}

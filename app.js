@@ -14,7 +14,7 @@ const stops = [
     title:'Mountain Forest',
     time:'12 min',
     tags:['Must see'],
-    note:'Begin with the inland side of South Carolina: waterfalls, stream life, birds and river otters if they are active.',
+    note:'Begin with the inland side of South Carolina: waterfalls, stream life, a bald eagle and river otters if they are active.',
     image:'assets/mountain-forest.png',
     alt:'Soft pastel illustration of Mountain Forest with a bald eagle, waterfall, and river otters'
   },
@@ -23,7 +23,7 @@ const stops = [
     title:'Piedmont',
     time:'10 min',
     tags:['SC habitats'],
-    note:'Use this as the “mountains to sea” transition, with rivers, wetlands, amphibians and native fish.',
+    note:'Continue through freshwater habitats with tree frogs, native fish and the feeling of moving from foothills toward the coast.',
     image:'assets/piedmont.png',
     alt:'Soft pastel illustration of the Piedmont exhibit with tree frogs and freshwater fish'
   },
@@ -32,7 +32,7 @@ const stops = [
     title:'Boneyard Beach Touch Tank Experience',
     time:'10–15 min',
     tags:['Must see','Kids'],
-    note:'A good pause point with sea stars, rays and touch-tank wildlife. Move slowly, follow staff guidance and wash hands afterward.',
+    note:'Pause for a hands-on moment with sea stars, rays and touch-tank wildlife. Move slowly and follow staff guidance.',
     image:'assets/touch-tank.png',
     alt:'Soft pastel illustration of a touch tank with rays, sea stars, and gentle hands reaching in'
   },
@@ -41,7 +41,7 @@ const stops = [
     title:'Saltmarsh Aviary',
     time:'12 min',
     tags:['Photos'],
-    note:'Watch for birds, marsh life and panoramic harbor atmosphere as you move into the coastal Lowcountry.',
+    note:'Step into the coastal Lowcountry with marsh birds, harbor views, terrapins and saltmarsh life.',
     image:'assets/saltmarsh-aviary.png',
     alt:'Soft pastel illustration of the Saltmarsh Aviary with a roseate spoonbill and coastal marsh water'
   },
@@ -50,7 +50,7 @@ const stops = [
     title:'Ocean / Great Ocean Tank',
     time:'15–20 min',
     tags:['Must see'],
-    note:'Slow down here. Look for sharks, rays, schooling fish and the Aquarium’s famous sea turtle at different tank levels.',
+    note:'Slow down at the big ocean moment. Look for sharks, rays, schooling fish and the Aquarium’s famous sea turtle at different tank levels.',
     image:'assets/great-ocean-tank.png',
     alt:'Soft pastel underwater illustration of the Great Ocean Tank with sharks, rays, fish, and a sea turtle'
   },
@@ -59,7 +59,7 @@ const stops = [
     title:'Jurassic Seas',
     time:'10–15 min',
     tags:['Featured exhibit'],
-    note:'A prehistoric ocean-themed stop and one of the best “wow” moments for the visit.',
+    note:'Add the prehistoric ocean stop for fossils, marine reptile skeletons and one of the strongest wow moments in the visit.',
     image:'assets/jurassic-seas.png',
     alt:'Soft pastel illustration of Jurassic Seas with a marine reptile skeleton and fossils'
   },
@@ -77,7 +77,7 @@ const stops = [
     title:'Gift Shop / Harbor View',
     time:'5–10 min',
     tags:['Finish'],
-    note:'Grab a souvenir, then take a last look toward the harbor and Ravenel Bridge area.',
+    note:'Wrap up with a souvenir or a final harbor view before heading out for food nearby.',
     image:'assets/logo-mark.jpg',
     alt:'Aquarium Guide round logo mark'
   }
@@ -91,28 +91,11 @@ const food = [
   {name:'Charleston City Market Area', kind:['quick','dessert'], walk:'Cluster of casual bites, sweets and sit-down restaurants nearby.', note:'Good if your group wants multiple options.', url:'https://www.google.com/maps/search/?api=1&query=restaurants%20near%20Charleston%20City%20Market'}
 ];
 
-const completed = new Set(JSON.parse(localStorage.getItem('completedStops') || '[]'));
 const list = document.getElementById('tourList');
-const highlightGrid = document.getElementById('highlightGrid');
-const featuredHighlights = stops.filter(s => !['entry','gift'].includes(s.id));
-
-function renderHighlights(){
-  if(!highlightGrid) return;
-  highlightGrid.innerHTML = featuredHighlights.map(s => `
-    <button class="highlight-card" data-jump="${s.id}" type="button" aria-label="Jump to ${s.title}">
-      <img src="${s.image}" alt="${s.alt}" loading="lazy">
-      <div class="highlight-copy">
-        <span class="highlight-time">${s.time}</span>
-        <strong>${s.title}</strong>
-      </div>
-    </button>`).join('');
-}
-
 
 function renderStops(){
   list.innerHTML = stops.map(s=>`
-    <li class="stop ${completed.has(s.id)?'done':''}" data-id="${s.id}" tabindex="0" role="button" aria-pressed="${completed.has(s.id)}">
-      <input type="checkbox" data-id="${s.id}" ${completed.has(s.id)?'checked':''} aria-label="Mark ${s.title} complete">
+    <li class="stop route-stop" data-id="${s.id}">
       <div class="stop-media ${s.id==='entry' || s.id==='gift' ? 'logo-media' : ''}">
         <img src="${s.image}" alt="${s.alt}" loading="lazy">
       </div>
@@ -125,38 +108,7 @@ function renderStops(){
         <div>${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
       </div>
     </li>`).join('');
-  updateProgress();
 }
-
-function toggleStop(id){
-  completed.has(id) ? completed.delete(id) : completed.add(id);
-  localStorage.setItem('completedStops', JSON.stringify([...completed]));
-  renderStops();
-}
-
-function updateProgress(){
-  const pct = Math.round((completed.size / stops.length) * 100);
-  document.querySelector('#progressBar span').style.width = `${pct}%`;
-}
-
-list.addEventListener('click', e=>{
-  const stop = e.target.closest('.stop');
-  if(!stop) return;
-  toggleStop(stop.dataset.id);
-});
-list.addEventListener('keydown', e=>{
-  if(e.key !== 'Enter' && e.key !== ' ') return;
-  const stop = e.target.closest('.stop');
-  if(!stop) return;
-  e.preventDefault();
-  toggleStop(stop.dataset.id);
-});
-
-document.getElementById('resetProgress').addEventListener('click',()=>{
-  completed.clear();
-  localStorage.removeItem('completedStops');
-  renderStops();
-});
 
 function activateTab(tabId, shouldScroll=true){
   document.querySelectorAll('.tab,.nav-tab,.panel').forEach(el=>el.classList.remove('active'));
@@ -192,22 +144,8 @@ document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=
   renderFood(btn.dataset.filter);
 }));
 
-document.addEventListener('click', e=>{
-  const card = e.target.closest('.highlight-card');
-  if(!card) return;
-  const id = card.dataset.jump;
-  activateTab('tour', false);
-  const target = document.querySelector(`.stop[data-id="${id}"]`);
-  if(target){
-    target.scrollIntoView({behavior:'smooth', block:'center'});
-    target.classList.add('pulse');
-    setTimeout(()=>target.classList.remove('pulse'), 1200);
-  }
-});
-
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
 }
-renderHighlights();
 renderStops();
 renderFood();
