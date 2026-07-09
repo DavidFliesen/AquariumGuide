@@ -453,3 +453,113 @@ footer{
   .map-frame img{min-width:720px}
   .footer-inner{display:block;padding:22px 0}
 }
+
+/* Simplified visitor-guide navigation */
+.simplified-nav .nav-inner{
+  min-height:72px;
+}
+.top-tabs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0;
+}
+.nav-tab{
+  border:1px solid rgba(0,61,88,.14);
+  background:#fff;
+  color:var(--deep);
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:950;
+  cursor:pointer;
+  font:inherit;
+}
+.nav-tab.active{
+  background:var(--deep);
+  color:white;
+  border-color:var(--deep);
+}
+.feature-action{
+  text-align:left;
+  font:inherit;
+  cursor:pointer;
+  background:white;
+  border-radius:22px;
+  padding:18px 20px;
+  text-decoration:none;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  border-bottom:5px solid var(--teal);
+  color:inherit;
+}
+.feature-action strong{
+  display:block;
+  color:var(--deep);
+  font-size:1.1rem;
+}
+.feature-action span{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.feature-action:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 34px rgba(0,61,88,.12);
+}
+.button{font:inherit}
+@media(max-width:760px){
+  .nav-inner{display:block;padding:12px 0}
+  .top-tabs{
+    overflow-x:auto;
+    gap:8px;
+    padding-top:12px;
+    white-space:nowrap;
+  }
+  .nav-tab{
+    flex:0 0 auto;
+    padding:10px 14px;
+    background:var(--mist);
+  }
+  .tabs{top:126px}
+}
+
+/* Final simplified header: brand only, section controls live in the main tab bar */
+.simplified-nav .nav-inner{
+  justify-content:flex-start;
+}
+@media(max-width:760px){
+  .tabs{top:96px}
+}
+
+/* User-requested simplification: no sales-style header/menu and no brag stats */
+.hero-grid{
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.55fr);
+}
+.hero-actions,
+.feature-strip,
+.stat-row,
+.ticket-link,
+.top-tabs,
+.site-nav nav{
+  display:none!important;
+}
+.plain-note{
+  margin-top:12px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-weight:850;
+}
+.visit-card{
+  max-width:420px;
+  justify-self:end;
+}
+main{margin-top:-28px}
+.tabs{top:80px}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;padding:34px 0 62px;gap:18px}
+  .visit-card{justify-self:stretch;max-width:none}
+  main{margin-top:-22px}
+  .tabs{top:82px}
+}

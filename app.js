@@ -65,11 +65,21 @@ document.getElementById('resetProgress').addEventListener('click',()=>{
   renderStops();
 });
 
-document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.tab,.panel').forEach(el=>el.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(btn.dataset.tab).classList.add('active');
-  document.getElementById(btn.dataset.tab).scrollIntoView({behavior:'smooth', block:'start'});
+function activateTab(tabId, shouldScroll=true){
+  document.querySelectorAll('.tab,.nav-tab,.panel').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll(`[data-tab="${tabId}"]`).forEach(el=>{
+    if(el.classList.contains('tab') || el.classList.contains('nav-tab')) el.classList.add('active');
+  });
+  const panel = document.getElementById(tabId);
+  if(panel){
+    panel.classList.add('active');
+    if(shouldScroll) panel.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
+document.querySelectorAll('.tab,.nav-tab,.jump-tab,.feature-action').forEach(btn=>btn.addEventListener('click', e=>{
+  if(btn.dataset.tab) e.preventDefault();
+  activateTab(btn.dataset.tab);
 }));
 
 function renderFood(filter='all'){
