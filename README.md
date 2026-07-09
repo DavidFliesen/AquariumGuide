@@ -1,15 +1,15 @@
-# The Aquarium Guide PWA
+# The Aquarium Guide
 
-A quick progressive web app for a South Carolina Aquarium visit in Charleston, branded as **The Aquarium Guide**.
+A polished single-page web app for a South Carolina Aquarium visit in Charleston.
 
-## What was updated
-- App renamed to **The Aquarium Guide**
-- Added the supplied wordmark in the app header
-- Added the supplied logo mark as the app icon / Apple touch icon
-- Used the logo mark as a subtle visual element in the map section
+## Current update
+- Removed the install button.
+- Reworked the design so it more closely follows the feel of the South Carolina Aquarium website: clean white navigation, strong ocean-blue hero section, coral/gold calls to action, larger typography and card-based content.
+- Kept the app as a normal webpage while retaining lightweight offline caching.
+- Included the Aquarium's online map image for quick reference, with links back to the official map page.
 
 ## Run locally
-Open `index.html` in a browser. For full PWA install/offline behavior, serve it from a local web server or GitHub Pages:
+Open `index.html` in a browser. For service-worker caching, serve it from a local web server:
 
 ```bash
 python3 -m http.server 8080
@@ -18,11 +18,9 @@ python3 -m http.server 8080
 Then open `http://localhost:8080`.
 
 ## Deploy on GitHub Pages
-1. Create a new repository.
-2. Upload these files.
-3. In GitHub: Settings → Pages → Deploy from branch → main / root.
-4. Open the Pages URL on your iPad/iPhone.
-5. In Safari: Share → Add to Home Screen.
+1. Upload the folder contents to a GitHub repository.
+2. In GitHub: Settings → Pages → Deploy from branch → main / root.
+3. Open the GitHub Pages URL in Safari, Chrome, or Edge.
 
 ## Notes
-This is a personal helper app, not affiliated with the South Carolina Aquarium. Verify hours, exhibit availability, tickets, and restaurant hours before going.
+This is a personal visit helper and is not affiliated with the South Carolina Aquarium. Verify hours, tickets, exhibits, map details and restaurant hours before going.

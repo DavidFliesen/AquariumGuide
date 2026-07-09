@@ -4,37 +4,65 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>The Aquarium Guide</title>
-  <meta name="theme-color" content="#073b5c" />
-  <meta name="description" content="The Aquarium Guide — a clean guided-tour webpage for the South Carolina Aquarium in Charleston." />
+  <meta name="theme-color" content="#003d58" />
+  <meta name="description" content="The Aquarium Guide — a polished webpage for a South Carolina Aquarium visit in Charleston." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand-row">
-      <img class="brand-mark" src="assets/logo-mark.jpg" alt="" aria-hidden="true" />
-      <div>
-        <p class="eyebrow">Charleston Visit Helper</p>
-        <h1>The Aquarium Guide</h1>
-      </div>
+  <div class="top-ribbon">
+    <div class="wrap ribbon-inner">
+      <span>South Carolina Aquarium • Charleston</span>
+      <a href="https://scaquarium.org/tickets/" target="_blank" rel="noopener">Tickets & Hours</a>
     </div>
-    <p class="lede">A polished, phone-friendly guide for your South Carolina Aquarium visit: key exhibits, progress tracking, the official Aquarium map, parking links, and nearby food ideas.</p>
+  </div>
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#tour" aria-label="The Aquarium Guide home">
+        <img src="assets/logo-mark.jpg" alt="" aria-hidden="true" />
+        <span>The Aquarium Guide</span>
+      </a>
+      <nav aria-label="Quick links">
+        <a href="#tour">Plan Your Visit</a>
+        <a href="#map">Map</a>
+        <a href="#food">Nearby Food</a>
+        <a class="ticket-link" href="https://scaquarium.org/tickets/" target="_blank" rel="noopener">Tickets</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="overview-grid">
-      <article class="card">
-        <span class="label">Visit Plan</span>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Self-guided visit companion</p>
+        <h1>Explore from the mountains to the sea.</h1>
+        <p class="lede">A clean, phone-friendly page for your South Carolina Aquarium visit with a guided route, the Aquarium’s online map, parking links and nearby places to eat.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tour">Start the Tour</a>
+          <a class="button secondary" href="#map">View Map</a>
+        </div>
+      </div>
+      <aside class="visit-card" aria-label="Visit plan summary">
+        <span class="label">Recommended Plan</span>
         <h2>90–120 minutes</h2>
-        <p>Use the full route for a relaxed visit, or focus on the marked “Must see” stops if you are short on time.</p>
-      </article>
-      <article class="card">
-        <span class="label">Start Here</span>
-        <h2>Mountains to Sea</h2>
-        <p>The Aquarium route is built around South Carolina habitats, moving from inland ecosystems toward coastal and ocean life.</p>
-      </article>
+        <p>Follow the full route for a relaxed visit or focus on the “Must see” stops for a shorter day.</p>
+        <div class="stat-row">
+          <span><strong>4</strong> tabs</span>
+          <span><strong>9</strong> tour stops</span>
+          <span><strong>1</strong> official map</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="feature-strip" aria-label="Featured aquarium links">
+      <a href="https://scaquarium.org/tickets/" target="_blank" rel="noopener"><strong>Tickets</strong><span>Check hours and admission</span></a>
+      <a href="https://scaquarium.org/exhibits/" target="_blank" rel="noopener"><strong>Exhibits</strong><span>See what is featured</span></a>
+      <a href="https://scaquarium.org/directions-parking/" target="_blank" rel="noopener"><strong>Parking</strong><span>Directions and garage info</span></a>
     </section>
 
     <nav class="tabs" aria-label="App sections">
@@ -47,40 +75,40 @@
     <section id="tour" class="panel active">
       <div class="section-head">
         <div>
-          <span class="label">Self-Guided Route</span>
-          <h2>Recommended Tour</h2>
+          <span class="label">Plan Your Visit</span>
+          <h2>Recommended Tour Route</h2>
         </div>
-        <button id="resetProgress" class="small">Reset</button>
+        <button id="resetProgress" class="small">Reset Progress</button>
       </div>
-      <p class="hint">Tap each stop as you finish it. The progress bar keeps your visit organized without making the tour feel rushed.</p>
+      <p class="hint">Tap each stop as you complete it. The checklist is intentionally simple so it feels like a guide, not homework.</p>
       <div id="progressBar" aria-label="Tour progress"><span></span></div>
       <ol id="tourList" class="tour-list"></ol>
     </section>
 
     <section id="map" class="panel">
-      <div class="section-head compact">
+      <div class="section-head">
         <div>
-          <span class="label">Official Floor Map</span>
-          <h2>Aquarium Map</h2>
+          <span class="label">Explore</span>
+          <h2>Official Aquarium Map</h2>
         </div>
         <a class="small link-small" href="https://scaquarium.org/map/" target="_blank" rel="noopener">Open Official Page</a>
       </div>
-      <p class="hint">This uses the Aquarium’s current online map image. Pinch to zoom on your phone, or open the official page for the latest version.</p>
+      <p class="hint">This app includes the Aquarium’s online map image for quick reference. Use the official page for the latest version and pinch-to-zoom as needed.</p>
       <a class="map-frame" href="https://scaquarium.org/map/" target="_blank" rel="noopener" aria-label="Open the official South Carolina Aquarium map">
         <img src="assets/sca-map-june-2026.webp" alt="South Carolina Aquarium official map showing first and second floor exhibits" />
       </a>
       <div class="button-grid">
-        <a class="button" href="https://scaquarium.org/map/" target="_blank" rel="noopener">Official Map</a>
-        <a class="button" href="https://maps.apple.com/?address=100%20Aquarium%20Wharf,%20Charleston,%20SC%2029401" target="_blank" rel="noopener">Apple Maps</a>
-        <a class="button" href="https://www.google.com/maps/search/?api=1&query=South%20Carolina%20Aquarium%20100%20Aquarium%20Wharf%20Charleston%20SC" target="_blank" rel="noopener">Google Maps</a>
-        <a class="button" href="https://scaquarium.org/directions-parking/" target="_blank" rel="noopener">Parking Info</a>
+        <a class="button primary" href="https://scaquarium.org/map/" target="_blank" rel="noopener">Official Map</a>
+        <a class="button secondary" href="https://maps.apple.com/?address=100%20Aquarium%20Wharf,%20Charleston,%20SC%2029401" target="_blank" rel="noopener">Apple Maps</a>
+        <a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=South%20Carolina%20Aquarium%20100%20Aquarium%20Wharf%20Charleston%20SC" target="_blank" rel="noopener">Google Maps</a>
+        <a class="button secondary" href="https://scaquarium.org/directions-parking/" target="_blank" rel="noopener">Parking Info</a>
       </div>
     </section>
 
     <section id="food" class="panel">
-      <span class="label">After the Aquarium</span>
+      <span class="label">After Your Visit</span>
       <h2>Nearby Bites</h2>
-      <p class="hint">Tap a card to open directions. Call or check hours before heading over.</p>
+      <p class="hint">Tap a card to open directions. Hours can change, so check before walking or driving over.</p>
       <div class="filters" aria-label="Food filters">
         <button class="chip active" data-filter="all">All</button>
         <button class="chip" data-filter="quick">Quick</button>
@@ -91,19 +119,22 @@
     </section>
 
     <section id="tips" class="panel">
-      <span class="label">Practical Notes</span>
+      <span class="label">Before You Go</span>
       <h2>Quick Tips</h2>
       <div class="tip-grid">
-        <article class="tip"><h3>Best short route</h3><p>Prioritize Mountain Forest, touch tanks, Great Ocean Tank, Jurassic Seas, and Sea Turtle Care Center.</p></article>
-        <article class="tip"><h3>Photo moments</h3><p>Harbor views, otters if active, jellyfish, large tank silhouettes, and turtles.</p></article>
-        <article class="tip"><h3>Parking</h3><p>The Aquarium points guests to the city-operated garage at 24 Calhoun Street.</p></article>
-        <article class="tip"><h3>Accessibility</h3><p>Keep the official map open and ask staff for the easiest route if elevators or ramps are needed.</p></article>
+        <article class="tip"><h3>Best short route</h3><p>Prioritize Mountain Forest, touch tanks, Great Ocean Tank, Jurassic Seas and Sea Turtle Care Center.</p></article>
+        <article class="tip"><h3>Photo moments</h3><p>Harbor views, otters if active, jellyfish, large tank silhouettes and turtles.</p></article>
+        <article class="tip"><h3>Parking</h3><p>The Aquarium’s directions page points visitors to the Aquarium Garage at 24 Calhoun Street.</p></article>
+        <article class="tip"><h3>Accessibility</h3><p>Keep the map open and ask staff for the easiest route if elevators or ramps are needed.</p></article>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Personal visit helper. Not affiliated with the South Carolina Aquarium.</p>
+    <div class="wrap footer-inner">
+      <p>Personal visit helper inspired by the South Carolina Aquarium website style. Not affiliated with the South Carolina Aquarium.</p>
+      <a href="https://scaquarium.org" target="_blank" rel="noopener">scaquarium.org</a>
+    </div>
   </footer>
 
   <script src="app.js"></script>
